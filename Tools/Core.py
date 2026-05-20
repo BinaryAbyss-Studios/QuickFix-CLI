@@ -12,6 +12,10 @@ except ModuleNotFoundError:
 import time
 import webbrowser
 import random
+
+if getattr(sys, 'frozen', False):
+    os.chdir(os.path.dirname(sys.executable))
+
 os_name = platform.system()
 Service = "1- Manual , 2- Automatic , 3- More Options , 4- Exit Program "
 Manual_Service = "1- sfc scan , 2- restore health , 3- Scan health , 4- component cleaup , 5- Clean Mount points + curroption , 6- Full Disk Scan, 7- More Options , 8-Exit"
@@ -133,35 +137,35 @@ def W_Manual():
             sys.exit()
         if Terminal_choice == "1":
             try:    
-                sfc = sp.run('sfc /scannow', capture_output=True, text=True, shell=True)
+                sfc = sp.run('sfc /scannow', shell=True)
                 print(sfc.stdout)
                 print(sfc.stderr)
             except Exception as ex:
                 print(f"[-] An Error has Accured: {ex}")
         elif Terminal_choice == "2":
             try:    
-                sfc = sp.run('DISM /Online /Cleanup-Image /RestoreHealth', capture_output=True, text=True, shell=True)
+                sfc = sp.run('DISM /Online /Cleanup-Image /RestoreHealth', shell=True)
                 print(sfc.stdout)
                 print(sfc.stderr)
             except Exception as ex:
                 print(f"[-] An Error has Accured: {ex}")
         elif Terminal_choice == "3":
             try:    
-                sfc = sp.run('DISM /Online /Cleanup-Image /ScanHealth', capture_output=True, text=True, shell=True)
+                sfc = sp.run('DISM /Online /Cleanup-Image /ScanHealth', shell=True)
                 print(sfc.stdout)
                 print(sfc.stderr)
             except Exception as ex:
                 print(f"[-] An Error has Accured: {ex}")
         elif Terminal_choice == "4":
             try:    
-                sfc = sp.run('DISM /Online /Cleanup-Image /StartComponentCleanup', capture_output=True, text=True, shell=True)
+                sfc = sp.run('DISM /Online /Cleanup-Image /StartComponentCleanup', shell=True)
                 print(sfc.stdout)
                 print(sfc.stderr)
             except Exception as ex:
                 print(f"[-] An Error has Accured: {ex}")
         elif Terminal_choice == "5":
             try:    
-                sfc = sp.run('DISM /Cleanup-MountPoints', capture_output=True, text=True, shell=True)
+                sfc = sp.run('DISM /Cleanup-MountPoints', shell=True)
                 print(sfc.stdout)
                 print(sfc.stderr)
             except Exception as ex:
