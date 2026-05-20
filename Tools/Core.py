@@ -138,36 +138,26 @@ def W_Manual():
         if Terminal_choice == "1":
             try:    
                 sfc = sp.run('sfc /scannow', shell=True)
-                print(sfc.stdout)
-                print(sfc.stderr)
             except Exception as ex:
                 print(f"[-] An Error has Accured: {ex}")
         elif Terminal_choice == "2":
             try:    
-                sfc = sp.run('DISM /Online /Cleanup-Image /RestoreHealth', shell=True)
-                print(sfc.stdout)
-                print(sfc.stderr)
+                DISM = sp.run('DISM /Online /Cleanup-Image /RestoreHealth', shell=True)
             except Exception as ex:
                 print(f"[-] An Error has Accured: {ex}")
         elif Terminal_choice == "3":
             try:    
-                sfc = sp.run('DISM /Online /Cleanup-Image /ScanHealth', shell=True)
-                print(sfc.stdout)
-                print(sfc.stderr)
+                DISM = sp.run('DISM /Online /Cleanup-Image /ScanHealth', shell=True)
             except Exception as ex:
                 print(f"[-] An Error has Accured: {ex}")
         elif Terminal_choice == "4":
             try:    
-                sfc = sp.run('DISM /Online /Cleanup-Image /StartComponentCleanup', shell=True)
-                print(sfc.stdout)
-                print(sfc.stderr)
+                DISM = sp.run('DISM /Online /Cleanup-Image /StartComponentCleanup', shell=True)
             except Exception as ex:
                 print(f"[-] An Error has Accured: {ex}")
         elif Terminal_choice == "5":
             try:    
-                sfc = sp.run('DISM /Cleanup-MountPoints', shell=True)
-                print(sfc.stdout)
-                print(sfc.stderr)
+                DISM = sp.run('DISM /Cleanup-MountPoints', shell=True)
             except Exception as ex:
                 print(f"[-] An Error has Accured: {ex}")
         elif Terminal_choice == "6":
@@ -198,13 +188,9 @@ def W_Automatic():
         print("[+] Checking Health")
         for checkcmd in checking_health:
             result_health = sp.run(checkcmd , shell=True)
-            print(result_health.stdout)
-            print(result_health.stderr)
         print("[+] Running Repair + Optimization Please wait..")
         for cmd in commands:
             result = sp.run(cmd, shell=True)
-            print(result.stdout)
-            print(result.stderr)
         print("[+] Scheduling CHKDSK...")
         os.system("echo Y|chkdsk /f /r C:")
         print("[+] Finished Successfully")
