@@ -193,12 +193,12 @@ def W_Automatic():
     try:
         print("[+] Checking Health")
         for checkcmd in checking_health:
-            result_health = sp.run(checkcmd , capture_output=True, text=True, shell=True)
+            result_health = sp.run(checkcmd , shell=True)
             print(result_health.stdout)
             print(result_health.stderr)
         print("[+] Running Repair + Optimization Please wait..")
         for cmd in commands:
-            result = sp.run(cmd, capture_output=True, text=True, shell=True)
+            result = sp.run(cmd, shell=True)
             print(result.stdout)
             print(result.stderr)
         print("[+] Scheduling CHKDSK...")
