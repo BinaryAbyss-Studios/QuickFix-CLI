@@ -7,6 +7,13 @@ this is a Program Project that helps and Fixes os issues without headache , Ever
 - Easy Installation
 - just runs
 
+# Whats new in Latest Update / release
+
+- better stucture
+- Better CLI
+- fix Bugs
+
+
 For Windows:
 
 install exe file or run the python project Main.py with the python interpreter . But! dont forget to download the Hole project
