@@ -3,11 +3,15 @@ import os
 import sys
 import platform
 #inculding Cmd 
+os_name = platform.system()
 import subprocess as sp
-try:
-    from Tools import Checker as CK  # when run from Main.py
-except ModuleNotFoundError:
-    import Checker as CK  # when run directly
+if os_name == "Windows":
+    try:
+        from Tools import Checker as CK  # when run from Main.py
+    except ModuleNotFoundError:
+        import Checker as CK  # when run directly
+else:
+    print("[+] OS not supported to run in sudo (admin) prevliges")
 #including depencites
 import time
 import webbrowser
@@ -20,7 +24,7 @@ if getattr(sys, 'frozen', False):
 #- have fun.
 
 os.system("title QuickFix v1.1")
-os_name = platform.system()
+print("[+] QuickFix v1.1")
 Service = "[1] Manual , [2] Automatic , [3] More Options , [4] Exit Program "
 Manual_Service = """
 [1] sfc scan ,         [2] restore health ,                 [3] Scan health , 
@@ -197,9 +201,17 @@ def W_Automatic():
         print("[+] Running Repair + Optimization Please wait..")
         for cmd in commands:
             result = sp.run(cmd, shell=True)
-        print("[+] Scheduling CHKDSK...")
-        os.system("echo Y|chkdsk /f /r C:")
-        print("[+] Finished Successfully")
+        print("[!] Do you want to run the CHKDSK (full disk Checkup)")
+        choice_chkdsk = input("y/N")
+        if choice_chkdsk == 'Y' or choice_chkdsk == 'y':
+            print("[+] Scheduling CHKDSK...")
+            os.system("echo Y|chkdsk /f /r C:")
+            print("[+] Finished Successfully")
+        elif choice_chkdsk == 'n' or choice_chkdsk == 'N':
+            print("[-] Operation Disabled")
+        else:
+            print("[-] Operation Disabled")
+            pass
         print("enter 1 to close program , enter 2 to relaunch program , enter 3 to restart Computer (Recommended)")
         while True:
             choice = input("~> ")
