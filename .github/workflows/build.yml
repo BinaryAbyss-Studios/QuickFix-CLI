@@ -7,7 +7,7 @@ on:
 
 env:
   SCRIPT: main.py
-  APP_NAME: QuickFix-Beta-1.2v
+  APP_NAME: QuickFix-Beta-1.2.1v
 
 jobs:
   build:

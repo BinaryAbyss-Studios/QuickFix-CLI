@@ -40,8 +40,8 @@ def Check__():
         print("[+] Running with administrator privileges")
 # —————— End of the Block ——————————————————————————————————————————————
 
-os.system("title QuickFix v1.2")
-print("[+] QuickFix v1.2")
+os.system("title QuickFix v1.2.1 Beta")
+print("[+] QuickFix v1.2.1 Beta")
 Service = "[1] Manual , [2] Automatic , [3] More Options , [4] Exit Program "
 Manual_Service = """
 [1] sfc scan ,         [2] restore health ,                 [3] Scan health , 
