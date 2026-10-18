@@ -8,7 +8,7 @@
 </div>
 
 ---
-- **QuickFix is a Windows Platform based program that execute can automatically execute helpful commands and contain list of commands that help for system stability and checking + Fixes Errors in the Mechine**
+- **QuickFix is a Windows Platform based program that execute can automatically execute helpful commands and contain list of commands that help for system stability and checking + Fixes Problems in the Mechine**
 
 ---
 
