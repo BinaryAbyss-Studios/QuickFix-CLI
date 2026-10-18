@@ -10,3 +10,21 @@
 ---
 - **QuickFix is a Windows Platform based program that execute can automatically execute helpful commands and contain list of commands that help for system stability and checking + Fixes Errors in the Mechine**
 
+---
+
+## Run from source (Windows)
+
+Requires Python 3.10 or newer.
+
+```bash
+git clone https://github.com/BinaryAbyss-Studios/QuickFix-CLI.git
+cd QuickFix-CLI
+python main.py
+```
+
+The tool needs administrator privileges and will prompt (UAC) to relaunch itself as admin.
+
+## Download the EXE
+
+No Python needed: grab the latest `.exe` from the [**Releases**](https://github.com/BinaryAbyss-Studios/QuickFix-CLI/releases) page.
+Windows SmartScreen may warn about an unknown publisher, since the exe isn't code-signed. The full source is in this repo if you want to check it.
