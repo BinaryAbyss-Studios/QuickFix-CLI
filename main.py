@@ -33,7 +33,7 @@ def relaunch_as_admin():
     sys.exit() # Exit for old instant
 
 def Check__():
-    if not is_admin:
+    if not is_admin():
         print("[-] This Script Require Admin Preivileges")
         relaunch_as_admin()
     else:
@@ -170,7 +170,6 @@ def W_Manual():
                     return
                 case "8":
                     print("[+] Exiting Manual Mode.")
-                    W_Menu()
                     return
                 case _:
                     print("[-] Invaild Input")
